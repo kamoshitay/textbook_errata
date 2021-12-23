@@ -70,6 +70,8 @@
             window.location.href = "./複素関数.pdf";
         }else if ( prediction[4].probability.toFixed(2) > 0.90){
             window.location.href = "./高専の数学.pdf";
+        }else if ( prediction[5].probability.toFixed(2) > 0.90){
+            labelContainer.childNodes[0].innerHTML = "教科書を掲げてください．正誤表に移動します";
         }
     }
 </script>
