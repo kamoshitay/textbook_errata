@@ -59,13 +59,30 @@
     async function predict() {
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
-        for (let i = 0; i < maxPredictions; i++) {
+
+        if ( prediction[0].probability.toFixed(2) > 0.90){
+            window.location.href = "./ネットワークの技術基礎.pdf";
+        }else if ( prediction[1].probability.toFixed(2) > 0.90){
+            window.location.href = "./ディジタル通信.pdf";
+        }else if ( prediction[2].probability.toFixed(2) > 0.90){
+            window.location.href = "./基礎電子工学.pdf";
+        }else if ( prediction[3].probability.toFixed(2) > 0.90){
+            window.location.href = "./複素関数.pdf";
+        }else if ( prediction[4].probability.toFixed(2) > 0.90){
+            window.location.href = "./高専の数学.pdf";
+        }else if ( prediction[5].probability.toFixed(2) > 0.90){
+            
+        }
+
+
+
+        {% comment %} for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
-        }
+        } {% endcomment %}
     }
 </script>
-
+    
 </body>
 </html>
