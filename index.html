@@ -61,7 +61,7 @@
         const prediction = await model.predict(webcam.canvas);
 
         if ( prediction[0].probability.toFixed(2) > 0.90){
-            window.location.href = "./ネットワークの技術基礎.pdf";
+            window.location.href = "./ネットワーク技術の基礎.pdf";
         }else if ( prediction[1].probability.toFixed(2) > 0.90){
             window.location.href = "./ディジタル通信.pdf";
         }else if ( prediction[2].probability.toFixed(2) > 0.90){
