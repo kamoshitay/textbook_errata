@@ -37,43 +37,50 @@ button.btn {
 }
 /*その他と主な共通部分は省略*/
 
-a.btn-flat {
-    overflow: hidden;
-  
-    padding: 1.5rem 6rem;
-  
-    color: #fff;
-    border-radius: 0;
-    background: #000;
-  }
-  
-  a.btn-flat span {
-    position: relative;
-  }
-  
-  a.btn-flat:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-  
-    width: 100px;
-    height: 100px;
-  
-    content: '';
-    -webkit-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
-    -webkit-transform: translateX(-80%) translateY(-25px);
-    transform: translateX(-80%) translateY(-25px);
-  
-    border-radius: 50%;
-    background: #eb6100;
-  }
-  
-  a.btn-flat:hover:before {
-    width: 400px;
-    height: 400px;
-  
-    -webkit-transform: translateX(-1%) translateY(-175px);
-  
-    transform: translateX(-1%) translateY(-175px);
-  }
+a.btn-border {
+  margin-bottom: 12px;
+  padding: 10px;
+
+  -webkit-transition: all 0.3s;
+
+  transition: all 0.3s;
+
+  border: 2px solid #000;
+  background-image: -webkit-repeating-linear-gradient(
+    135deg,
+    #000,
+    #000 1px,
+    transparent 2px,
+    transparent 5px
+  );
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #000,
+    #000 1px,
+    transparent 2px,
+    transparent 5px
+  );
+  background-size: 7px 7px;
+
+  -webkit-backface-visibility: hidden;
+
+  backface-visibility: hidden;
+}
+
+a.btn-border span {
+  position: relative;
+
+  display: block;
+
+  padding: 1.25rem 3rem;
+
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 0.5rem;
+  background: #fff;
+}
+
+a.btn-border:hover {
+  margin: 4px 4px 12px;
+  padding: 6px;
+}
