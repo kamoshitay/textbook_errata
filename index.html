@@ -10,7 +10,7 @@
 </head>
 <body>
 <div style="text-align:center">
-    <h1>―――教科書・正誤表―――</h1>
+    <h1>―――教科書・正誤表1―――</h1>
 
     <button type="button" onclick="init()">―――画像検索―――</button>
 </div>
@@ -66,7 +66,12 @@
         const prediction = await model.predict(webcam.canvas);
 
         if ( prediction[0].probability.toFixed(2) > 0.80){
-            window.location.href = "./ネットワーク技術の基礎.html";
+            <h1>ネットワーク技術の基礎</h1>
+            <p style="text-align:center">
+                <img src="./image/ネットワーク技術の基礎.jpg" alt="ネットワーク技術の基礎" width="300">
+                <a href="#" onclick="history.back(-1);return false;">やり直す</a>
+                <a href="./ネットワーク技術の基礎.pdf"> 正誤表に移動 </a>
+            </p>
         }else if ( prediction[1].probability.toFixed(2) > 0.80){
             window.location.href = "./ディジタル通信.html";
         }else if ( prediction[2].probability.toFixed(2) > 0.80){
