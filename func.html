@@ -11,7 +11,7 @@
 
 <body>
 <div style="text-align:center">
-    <h1>―――教科書・正誤表照会器―――</h1>
+    <p><font size="6">―――教科書・正誤表照会器―――</font></p>
 </div>
 <div id="webcam-container" style="text-align:center"></div>
 <div id="label-container" style="text-align:center"><h1>教科書を掲げてください．AIが画像を判断します！</h1></div>
@@ -63,8 +63,7 @@
     async function predict() {
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
-
-        
+      
         if ( prediction[0].probability.toFixed(2) > 0.80){
             window.location.href = "./ネットワーク技術の基礎.html";
         }else if ( prediction[1].probability.toFixed(2) > 0.80){
@@ -75,10 +74,8 @@
             window.location.href = "./複素関数.html";
         }else if ( prediction[4].probability.toFixed(2) > 0.80){
             window.location.href = "./高専の数学.html";
-        }
-        
+        }      
     }
-
     init();
 </script>
 </body>
