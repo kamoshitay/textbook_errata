@@ -39,7 +39,9 @@ button.btn {
 
 a.btn-flat {
     overflow: hidden;
+  
     padding: 1.5rem 6rem;
+  
     color: #fff;
     border-radius: 0;
     background: #000;
@@ -52,18 +54,26 @@ a.btn-flat {
   a.btn-flat:before {
     position: absolute;
     top: 0;
-    left: 30px;
-    width: 150%;
-    height: 500%;
+    left: 0;
+  
+    width: 100px;
+    height: 100px;
+  
     content: '';
     -webkit-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
-    -webkit-transform: translateX(-98%) translateY(-70%) rotate(135deg);
-    transform: translateX(-98%) translateY(-70%) rotate(135deg);
-    background: #fff100;
+    -webkit-transform: translateX(-80%) translateY(-25px);
+    transform: translateX(-80%) translateY(-25px);
+  
+    border-radius: 50%;
+    background: #eb6100;
   }
   
   a.btn-flat:hover:before {
-    -webkit-transform: translateX(-9%) translateY(-25%) rotate(135deg);
-    transform: translateX(-9%) translateY(-25%) rotate(135deg);
+    width: 400px;
+    height: 400px;
+  
+    -webkit-transform: translateX(-1%) translateY(-175px);
+  
+    transform: translateX(-1%) translateY(-175px);
   }

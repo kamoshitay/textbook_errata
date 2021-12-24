@@ -10,8 +10,8 @@
 </head>
 <body>
 <div style="text-align:center">
-    <h1>―――教科書・正誤表1―――</h1>
-    <a href="#" onclick="init()" class="btn btn-flat"><span>―――画像検索―――</span></a>
+    <h1>―――教科書・正誤表2―――</h1>
+    <a href="" onclick="init()" class="btn btn-flat"><span>―――画像検索―――</span></a>
 
 </div>
 <div id="webcam-container" style="text-align:center"></div>
@@ -66,12 +66,7 @@
         const prediction = await model.predict(webcam.canvas);
 
         if ( prediction[0].probability.toFixed(2) > 0.80){
-            <h1>ネットワーク技術の基礎</h1>
-            <p style="text-align:center">
-                <img src="./image/ネットワーク技術の基礎.jpg" alt="ネットワーク技術の基礎" width="300">
-                <a href="#" onclick="history.back(-1);return false;">やり直す</a>
-                <a href="./ネットワーク技術の基礎.pdf"> 正誤表に移動 </a>
-            </p>
+            window.location.href = "./ネットワーク技術の基礎.html";
         }else if ( prediction[1].probability.toFixed(2) > 0.80){
             window.location.href = "./ディジタル通信.html";
         }else if ( prediction[2].probability.toFixed(2) > 0.80){
