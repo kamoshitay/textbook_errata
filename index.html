@@ -61,15 +61,15 @@
         const prediction = await model.predict(webcam.canvas);
 
         if ( prediction[0].probability.toFixed(2) > 0.90){
-            window.location.href = "./ネットワーク技術の基礎.pdf";
+            window.location.href = "./ネットワーク技術の基礎.html";
         }else if ( prediction[1].probability.toFixed(2) > 0.90){
-            window.location.href = "./ディジタル通信.pdf";
+            window.location.href = "./ディジタル通信.html";
         }else if ( prediction[2].probability.toFixed(2) > 0.90){
-            window.location.href = "./基礎電子工学.pdf";
+            window.location.href = "./基礎電子工学.html";
         }else if ( prediction[3].probability.toFixed(2) > 0.90){
-            window.location.href = "./複素関数.pdf";
+            window.location.href = "./複素関数.html";
         }else if ( prediction[4].probability.toFixed(2) > 0.90){
-            window.location.href = "./高専の数学.pdf";
+            window.location.href = "./高専の数学.html";
         }else if ( prediction[5].probability.toFixed(2) > 0.90){
             labelContainer.childNodes[0].innerHTML = "教科書を掲げてください．正誤表に移動します";
         }
