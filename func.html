@@ -64,6 +64,7 @@
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
 
+        <h1>教科書を掲げてください．正誤表に移動します</h1>
         if ( prediction[0].probability.toFixed(2) > 0.80){
             window.location.href = "./ネットワーク技術の基礎.html";
         }else if ( prediction[1].probability.toFixed(2) > 0.80){
@@ -75,7 +76,7 @@
         }else if ( prediction[4].probability.toFixed(2) > 0.80){
             window.location.href = "./高専の数学.html";
         }else if ( prediction[5].probability.toFixed(2) > 0.80){
-            labelContainer.childNodes[0].innerHTML = "教科書を掲げてください．正誤表に移動します";
+            
         }
         
     }
