@@ -1,4 +1,3 @@
-/*まずはお決まりのボックスサイズ算出をborer-boxに */
 *,
 *:before,
 *:after {
@@ -9,7 +8,7 @@
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: 62.5%;/*rem算出をしやすくするために*/
+  font-size: 62.5%;
 }
 
 .btn,
@@ -35,17 +34,48 @@ button.btn {
   color: #212529;
   border-radius: 0.5rem;
 }
-/*その他と主な共通部分は省略*/
 
 a.btn-border {
   margin-bottom: 12px;
-  padding: 10px;
+  padding: 0;
 
   -webkit-transition: all 0.3s;
 
   transition: all 0.3s;
 
+  border-radius: 0;
+}
+
+a.btn-border span {
+  position: relative;
+
+  display: block;
+
+  padding: 1.25rem 3rem;
+
+  color: #000;
   border: 2px solid #000;
+  border-radius: 0.5rem;
+  background: #fff;
+}
+
+a.btn-border:before {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 14px;
+
+  content: "";
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+
+  border: 2px solid #000;
+  border-top: 1px solid #000;
+  border-radius: 0 0 0.5rem 0.5rem;
   background-image: -webkit-repeating-linear-gradient(
     135deg,
     #000,
@@ -67,20 +97,20 @@ a.btn-border {
   backface-visibility: hidden;
 }
 
-a.btn-border span {
-  position: relative;
-
-  display: block;
-
-  padding: 1.25rem 3rem;
-
-  color: #000;
-  border: 2px solid #000;
-  border-radius: 0.5rem;
-  background: #fff;
+a.btn-border:hover {
+  -webkit-transform: translate(0, 3px);
+  transform: translate(0, 3px);
 }
 
-a.btn-border:hover {
-  margin: 4px 4px 12px;
-  padding: 6px;
+a.btn-border:hover:before {
+  bottom: -5px;
+}
+
+a.btn-border:active {
+  -webkit-transform: translate(0, 7px);
+  transform: translate(0, 7px);
+}
+
+a.btn-border:active:before {
+  bottom: -1px;
 }
